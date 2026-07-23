@@ -7,12 +7,12 @@ const siteData = {
       answer:
         "W pierwszy dzień studiowania odbywa się test, na którego podstawie zostaniecie przypisani do grup podstawowych albo rozszerzonych. Przeważnie najlepsze 30 osób dostaje się na rozszerzenie. TESTU NIE DA SIĘ NIE ZDAĆ. Jeżeli test pójdzie wam kiepsko, to nie martwcie się, napisanie słabo testu nie blokuje dostępu do żadnej ze specjalności. Polecam na kilka tygodni przed początkiem października rozwiązać sobie kilka testów dla odświeżenia zdolności matematycznych. Testy z poprzednich lat możecie znaleźć w sekcji Testy.",
     },
-    {
+    ,
+    /*{
       question: "Kiedy zapisujemy się na specjalności?",
       answer:
         "Dla większości z was odpowiedź brzmi - nigdy! Specjalności będziecie realizować, wybierając odpowiednie przedmioty w trakcie zapisów trwających przed każdym semestrem. Wyjątkiem są nauczyciele, którzy będą musieli w dziekanacie złożyć odpowiedni wniosek już w pierwszym semestrze.",
-    },
-    {
+    }*/ {
       question: "Kiedy zapisujemy się na przedmioty?",
       answer:
         "Dopiero od drugiego semestru. W pierwszym semestrze zostaniecie automatycznie przydzieleni do grup na podstawie wyników testu kwalifikacyjnego.",

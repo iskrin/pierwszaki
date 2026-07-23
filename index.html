@@ -23,50 +23,43 @@
   >
     <!-- Navbar -->
     <nav class="bg-primary shadow-md">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-end h-16 items-center">
-          <div class="flex space-x-4 md:space-x-8">
-            <a
-              href="index.html"
-              class="text-white font-semibold border-b-2 border-white px-1 py-2"
-              >Strona Główna</a
-            >
-            <a
-              href="faq.html"
-              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
-              >FAQ</a
-            >
-            <a
-              href="testy.html"
-              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
-              >Testy</a
-            >
-            <a
-              href="info.html"
-              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
-              >Informacje</a
-            >
-          </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between md:justify-end h-16 items-center">
+                <!-- Burger Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-blue-200 focus:outline-none p-2 -ml-2">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white font-semibold border-b-2 border-white px-1 py-2">Strona Główna</a>
+                    <a href="faq.html" class="text-blue-200 hover:text-white px-1 py-2 transition-colors">FAQ</a>
+                    <a href="testy.html" class="text-blue-200 hover:text-white px-1 py-2 transition-colors">Testy</a>
+                    <a href="info.html" class="text-blue-200 hover:text-white px-1 py-2 transition-colors">Informacje</a>
+                </div>
+            </div>
         </div>
-      </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-blue-800">
+            <div class="flex flex-col px-4 pt-2 pb-4 space-y-1">
+                <a href="index.html" class="text-white font-semibold block px-3 py-2 rounded-md bg-blue-800">Strona Główna</a>
+                <a href="faq.html" class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors">FAQ</a>
+                <a href="testy.html" class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors">Testy</a>
+                <a href="info.html" class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors">Informacje</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <main class="flex-grow flex items-center justify-center">
-      <div class="max-w-4xl mx-auto px-4 py-16 text-center">
-        <h1
-          class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight"
-        >
-          Witaj na pierwszym roku!
-        </h1>
-        <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-          Zebrałem tutaj najważniejsze informacje, testy z ubiegłych lat i
-          odpowiedzi na pytania, które ułatwią Ci start na studiach
-          matematycznych.
-        </p>
-      </div>
+        <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">Witaj na pierwszym roku!</h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto">Zebrałem tutaj najważniejsze informacje, testy z ubiegłych lat i odpowiedzi na pytania, które ułatwią Ci start na studiach matematycznych.</p>
+        </div>
     </main>
 
     <!-- Footer -->
+    <script src="app.js"></script>
   </body>
 </html>

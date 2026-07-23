@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Obsługa burger menu (nawigacja mobilna)
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+    
     // Renderowanie FAQ
     const faqContainer = document.getElementById('faq-container');
     if (faqContainer && typeof siteData !== 'undefined') {
