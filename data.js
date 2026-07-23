@@ -67,7 +67,7 @@ const siteData = {
         "https://www.math.uni.wroc.pl/~jwr/2024-25/Analiza1/Kwa24o.pdf",
     },
     {
-      year: "2023/2024",
+      year: "2024/2025",
       title: "Test kwalifikujący z matematyki 2024/2025",
       testUrl: "https://www.math.uni.wroc.pl/~jwr/2023-24/Analiza1/Kwa23.pdf",
       answersUrl:
