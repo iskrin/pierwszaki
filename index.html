@@ -18,15 +18,13 @@
       };
     </script>
   </head>
-  <body
-    class="bg-gradient-to-b from-blue-100 via-white to-blue-100 text-gray-800 font-sans antialiased min-h-screen flex flex-col"
-  >
+  <body class="bg-gradient-to-b from-blue-100 via-white to-blue-100 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
     <!-- Navbar -->
-    <nav class="bg-primary shadow-md">
+    <nav class="bg-primary shadow-md relative z-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between md:justify-end h-16 items-center">
+            <div class="flex justify-center h-16 items-center relative">
                 <!-- Burger Button -->
-                <div class="flex items-center md:hidden">
+                <div class="absolute left-0 flex items-center md:hidden">
                     <button id="mobile-menu-btn" class="text-white hover:text-blue-200 focus:outline-none p-2 -ml-2">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
@@ -52,12 +50,43 @@
     </nav>
 
     <!-- Hero Section -->
-    <main class="flex-grow flex items-center justify-center">
-        <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">Witaj na pierwszym roku!</h1>
-            <p class="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto">Zebrałem tutaj najważniejsze informacje, testy z ubiegłych lat i odpowiedzi na pytania, które ułatwią Ci start na studiach matematycznych.</p>
+    <main class="flex-grow flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-100 via-white to-blue-200 bg-[length:400%_400%] animate-gradient">
+        <!-- Decorative grid -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')] opacity-50 z-0"></div>
+        
+        <div class="relative z-10 w-full max-w-5xl mx-auto px-4 py-16 sm:py-24">
+            <div class="backdrop-blur-xl bg-white/60 border border-white/50 shadow-2xl rounded-3xl p-8 sm:p-12 text-center transform transition-all hover:scale-[1.01]">
+                <div class="w-20 h-20 mx-auto bg-gradient-to-br from-primary to-blue-400 rounded-2xl flex items-center justify-center shadow-lg mb-8 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                    Witaj na <span class="text-primary">pierwszym roku!</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-700 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
+                    Zebrałem tutaj najważniejsze informacje, testy z ubiegłych lat i odpowiedzi na pytania, które ułatwią Ci start na studiach matematycznych.
+                </p>
+                
+                <!-- Element dekoracyjny -->
+                <div class="flex justify-center items-center gap-3 mt-10">
+                    <div class="h-0.5 w-16 bg-gradient-to-r from-transparent to-primary/40 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full bg-primary/60 shadow-[0_0_8px_rgba(0,116,193,0.5)]"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_12px_rgba(0,116,193,0.8)] animate-pulse"></div>
+                    <div class="w-2 h-2 rounded-full bg-primary/60 shadow-[0_0_8px_rgba(0,116,193,0.5)]"></div>
+                    <div class="h-0.5 w-16 bg-gradient-to-l from-transparent to-primary/40 rounded-full"></div>
+                </div>
+            </div>
         </div>
     </main>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+            animation: gradient 15s ease infinite;
+        }
+    </style>
 
     <!-- Footer -->
     <script src="app.js"></script>
