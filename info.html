@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informacje - MathStart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0074C1",
+              primaryHover: "#005a96",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans antialiased min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-end h-16 items-center">
+          <div class="flex space-x-4 md:space-x-8">
+            <a
+              href="index.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Strona Główna</a
+            >
+            <a
+              href="faq.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >FAQ</a
+            >
+            <a
+              href="testy.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Testy</a
+            >
+            <a
+              href="info.html"
+              class="text-white font-semibold border-b-2 border-white px-1 py-2"
+              >Informacje</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
+          Dodatkowe Informacje
+        </h1>
+        <p class="text-lg text-gray-600">
+          Zbiór przydatnych linków, ciekawostek i luźnych informacji.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Specjalności -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+            <svg
+              class="w-6 h-6 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+              ></path>
+            </svg>
+            Lista specjalności
+          </h2>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Analiza danych
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Matematyka stosowana
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Matematyka aktuarialno-finansowa
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Matematyka w ekonomii
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Matematyka teoretyczna
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Matematyka nauczycielska
+            </li>
+          </ul>
+        </div>
+
+        <!-- Przydatne linki -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+            <svg
+              class="w-6 h-6 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+              ></path>
+            </svg>
+            Przydatne linki
+          </h2>
+          <div class="space-y-4">
+            <a
+              href="https://www.math.uni.wroc.pl/~jwr/"
+              target="_blank"
+              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                >
+                  Strona dr. Jarosława Wróblewskiego
+                </h3>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm mt-2">
+                W zakładkach Analiza matematyczna 1 (AM-1) na samym dole
+                znajdują się testy kwalifikacyjne z zeszłych lat. Przy okazji
+                możecie pooglądać stare kolosy.
+              </p>
+            </a>
+
+            <a
+              href="https://www.dawidmiga.cz/informacje-dla-pierwszakow"
+              target="_blank"
+              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                >
+                  Poradnik Dawida
+                </h3>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm mt-2">
+                Poradnik dla pierwszaków od naszego absolwenta.
+              </p>
+            </a>
+
+            <a
+              href="https://www.math.uni.wroc.pl/sites/default/files/poradnik_23_24z.pdf"
+              target="_blank"
+              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                >
+                  Poradnik dr. Jana Kraszewskiego
+                </h3>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm mt-2">
+                Poradnik dla pierwszaków od dr. Jana Kraszewskiego.
+              </p>
+            </a>
+
+            <a
+              href="https://www.facebook.com/WRSSWMI"
+              target="_blank"
+              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                >
+                  Strona Samorządu (WRSS WMI)
+                </h3>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm mt-2">
+                Obowiązkowy like. (Przeprowadzamy kontrole, brak like skutkuje
+                uwagą do dzienniczka i wezwaniem rodziców)
+              </p>
+            </a>
+
+            <a
+              href="https://www.instagram.com/wrss_wmi/"
+              target="_blank"
+              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                >
+                  Instagram Samorządu
+                </h3>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm mt-2">
+                Obowiązkowy follow. W razie kontroli jak wyżej.
+              </p>
+            </a>
+
+            <a
+              href="https://www.facebook.com/IMUWr"
+              target="_blank"
+              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                >
+                  Instytut Matematyczny UWr na FB
+                </h3>
+                <svg
+                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm mt-2">
+                Strona na Fb naszego instytutu.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary mt-auto py-8 text-center text-blue-100 text-sm">
+      <p>&copy; 2026 MathStart - Zbudowane dla pierwszaków.</p>
+    </footer>
+
+    <!-- Skrypty -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

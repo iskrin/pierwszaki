@@ -3,7 +3,7 @@ const siteData = {
   // Aby dodać nowe pytanie, dodaj nowy blok { question: "...", answer: "..." } oddzielony przecinkiem
   faq: [
     {
-      question: "Czym jest test kwalifikujący i kiedy się odbywa?",
+      question: "Czym jest test kwalifiacyjny i kiedy się odbywa?",
       answer:
         "W pierwszy dzień studiowania odbywa się test, na którego podstawie zostaniecie przypisani do grup podstawowych albo rozszerzonych. Przeważnie najlepsze 30 osób dostaje się na rozszerzenie. TESTU NIE DA SIĘ NIE ZDAĆ. Jeżeli test pójdzie wam kiepsko, to nie martwcie się, napisanie słabo testu nie blokuje dostępu do żadnej ze specjalności. Polecam na kilka tygodni przed początkiem października rozwiązać sobie kilka testów dla odświeżenia zdolności matematycznych. Testy z poprzednich lat możecie znaleźć w sekcji Testy.",
     },
@@ -41,6 +41,11 @@ const siteData = {
       question: "Co z WF / angielskim?",
       answer:
         "Angielski i WF zaczynacie dopiero od 2. semestru. Jeżeli chodzi o WF, w trakcie licencjatu musicie zrobić 2 semestry. Możliwych sportów do uprawiania jest multum, więc każdy znajdzie coś dla siebie. W przypadku języka angielskiego liczba semestrów do zrobienia będzie zależała od testu zdolności językowych. Liczba obowiązkowych semestrów może wynosić od 0 do 3 w zależności od wyników testu. Test będzie odbywał się zdalnie (!!!!!!) i zostaniecie o nim poinformowani mailowo.",
+    },
+    {
+      question: "Gdzie się płaci za palarnie?",
+      answer:
+        "Opłatę za palarnie uiszczamy w dziekanacie i wynosi ona 5zł za semestr. Brak ważnego pozwolenia może skutkować wezwaniem rodziców.",
     },
   ],
 
