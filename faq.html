@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Często zadawane pytania</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0074C1",
+              primaryHover: "#005a96",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 font-sans antialiased min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-end h-16 items-center">
+          <div class="flex space-x-4 md:space-x-8">
+            <a
+              href="index.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Strona Główna</a
+            >
+            <a
+              href="faq.html"
+              class="text-white font-semibold border-b-2 border-white px-1 py-2"
+              >FAQ</a
+            >
+            <a
+              href="testy.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Testy</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
+          Często zadawane pytania
+        </h1>
+      </div>
+
+      <div
+        class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8"
+      >
+        <div id="faq-container" class="space-y-2">
+          <!-- FAQ itemy będą wstrzykiwane przez JS -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+
+    <!-- Skrypty -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

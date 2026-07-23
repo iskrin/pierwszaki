@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strona dla Pierwszaków - Matematyka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0074C1",
+              primaryHover: "#005a96",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-b from-blue-100 via-white to-blue-100 text-gray-800 font-sans antialiased min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-end h-16 items-center">
+          <div class="flex space-x-4 md:space-x-8">
+            <a
+              href="index.html"
+              class="text-white font-semibold border-b-2 border-white px-1 py-2"
+              >Strona Główna</a
+            >
+            <a
+              href="faq.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >FAQ</a
+            >
+            <a
+              href="testy.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Testy</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex items-center justify-center">
+      <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+        <h1
+          class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight"
+        >
+          Witaj na pierwszym roku!
+        </h1>
+        <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          Zebrałem tutaj najważniejsze informacje, testy z ubiegłych lat i
+          odpowiedzi na pytania, które ułatwią Ci start na studiach
+          matematycznych.
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+  </body>
+</html>
