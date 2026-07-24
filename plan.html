@@ -1,0 +1,2375 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Studiów</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0074C1",
+              primaryHover: "#005a96",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-b from-blue-100 via-white to-blue-100 text-gray-800 font-sans antialiased min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-md relative z-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center h-16 items-center relative">
+          <!-- Burger Button -->
+          <div class="absolute left-0 flex items-center md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-white hover:text-blue-200 focus:outline-none p-2 -ml-2"
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Strona Główna</a
+            >
+            <a
+              href="plan.html"
+              class="text-white font-semibold border-b-2 border-white px-1 py-2"
+              >Plan Studiów</a
+            >
+            <a
+              href="faq.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >FAQ</a
+            >
+            <a
+              href="testy.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Testy</a
+            >
+            <a
+              href="info.html"
+              class="text-blue-200 hover:text-white px-1 py-2 transition-colors"
+              >Informacje</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-primary border-t border-blue-800"
+      >
+        <div class="flex flex-col px-4 pt-2 pb-4 space-y-1">
+          <a
+            href="index.html"
+            class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors"
+            >Strona Główna</a
+          >
+          <a
+            href="plan.html"
+            class="text-white font-semibold block px-3 py-2 rounded-md bg-blue-800"
+            >Plan Studiów</a
+          >
+          <a
+            href="faq.html"
+            class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors"
+            >FAQ</a
+          >
+          <a
+            href="testy.html"
+            class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors"
+            >Testy</a
+          >
+          <a
+            href="info.html"
+            class="text-blue-200 hover:text-white hover:bg-blue-800 block px-3 py-2 rounded-md transition-colors"
+            >Informacje</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          (Orientacyjny) Plan Studiów
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          Przegląd przedmiotów na poszczególnych semestrach. Poniższe plany mają
+          charakter sugestii a wasze ostatecznie plany zajęć na poszczególnych
+          semestrach mogą się od nich mniej lub bardziej różnić.
+        </p>
+
+        <!-- Dropdown / Toggle -->
+        <div
+          class="relative inline-block text-left mb-6 w-full max-w-xs mx-auto"
+        >
+          <select
+            id="specialization-select"
+            class="block w-full px-4 py-3 text-base text-gray-700 bg-white border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary appearance-none cursor-pointer"
+          >
+            <option value="plan-analiza-danych">Analiza danych</option>
+            <option value="plan-matematyka-aktuarialno-finansowa">
+              Matematyka aktuarialno-finansowa
+            </option>
+            <option value="plan-matematyka-nauczycielska">
+              Matematyka nauczycielska
+            </option>
+            <option value="plan-matematyka-stosowana">
+              Matematyka stosowana
+            </option>
+            <option value="plan-matematyka-teoretyczna">
+              Matematyka teoretyczna
+            </option>
+            <option value="plan-ogólna-bez-specjalności">
+              Ogólna (bez specjalności)
+            </option>
+          </select>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="plan-container" class="w-full">
+        <!-- ========================================== -->
+        <!-- SPECJALNOŚĆ: ANALIZA DANYCH                -->
+        <!-- ========================================== -->
+        <div
+          id="plan-analiza-danych"
+          class="specialization-plan hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- SEMESTR 1 - ANALIZA DANYCH -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 1</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztat informatyczny matematyka</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Szkolenie wstępne w zakresie BHP</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do kombinatoryki</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 2 - ANALIZA DANYCH -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 2</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 1 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Topologia
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 3 - ANALIZA DANYCH -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 3</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 3
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 2 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Programowanie i analiza danych w R</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 1</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Miara i całka
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 4 - ANALIZA DANYCH -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 4</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Równania różniczkowe 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Podstawy statystyki praktycznej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 2</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmiot do wyboru z dziedz.
+                  humanistycznych/społecznych</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 5 - ANALIZA DANYCH -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 5</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Statystyka</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Modele liniowe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Bazy danych</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 3</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 6 - ANALIZA DANYCH -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 6</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Ochrona własności intelektualnej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Egzamin dyplomowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt zespołowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Zaawansowane modele liniowe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Analiza dużych zbiorów danych</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-blue-50 rounded-2xl shadow-lg border border-blue-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-3"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 text-center"
+            >
+              <h2
+                class="text-2xl font-bold text-white flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Uwagi
+              </h2>
+            </div>
+            <ul class="p-6 flex-grow flex flex-col justify-center space-y-4 text-gray-800 text-base list-disc marker:text-primary pl-10 pr-2">
+              <li>
+                <p>
+                  <strong>Plan ma charakter orientacyjny</strong>. Niektóre
+                  przedmioty można realizować w innych semestrach. W planie nie
+                  zawierają się przedmioty do wyboru, potrzebne do uzupełniania
+                  ECTS dla poszczególnych specjalizacji. Ostatcznie możecie
+                  zapisać się na wiele przedmiotów, które nie są tutaj
+                  wyszczególnione.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>WF</strong> można realizować w dowolnym wybranym przez
+                  siebie momencie na studiach (poza semestrem pierwszym).
+                  Łącznie należy zaliczyć 2 semestry. W powyższym planie
+                  umieszczono je orientacyjnie.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Lektorat języka obcego</strong> (zazwyczaj
+                  angielskiego) realizujesz po rozwiązaniu testu poziomującego.
+                  Liczba obowiązkowych semestrów wynosi od 0 do 3 w zależności
+                  od tego, jak dobrze napiszesz test!
+                </p>
+              </li>
+              <li>
+                <p>
+                  Jako że od 2026 obowiązuje
+                  <strong>nowy program studiów</strong>, plan może zawierać
+                  drobne nieścisłości. Jednak ogólny zarys powinien być
+                  prawidłowy.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- SPECJALNOŚĆ: MATEMATYKA AKTUARIALNO-FINANSOWA -->
+        <!-- ========================================== -->
+        <div
+          id="plan-matematyka-aktuarialno-finansowa"
+          class="specialization-plan hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- SEMESTR 1 - MATEMATYKA AKTUARIALNO-FINANSOWA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 1</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztat informatyczny matematyka</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Szkolenie wstępne w zakresie BHP</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do kombinatoryki</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 2 - MATEMATYKA AKTUARIALNO-FINANSOWA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 2</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 1 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przegląd aktuarialno-finansowy</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Topologia
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 3 - MATEMATYKA AKTUARIALNO-FINANSOWA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 3</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 3
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 2 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 1</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Miara i całka
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 4 - MATEMATYKA AKTUARIALNO-FINANSOWA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 4</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Równania różniczkowe 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Podstawowe instrumenty finansowe</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 2</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmiot do wyboru z dziedz.
+                  humanistycznych/społecznych</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 5 - MATEMATYKA AKTUARIALNO-FINANSOWA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 5</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Bazy danych</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki ubezpieczeniowej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 3</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 6 - MATEMATYKA AKTUARIALNO-FINANSOWA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 6</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt zespołowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Ochrona własności intelektualnej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Egzamin dyplomowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do inżynierii finansowej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Podstawy statystyki</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-blue-50 rounded-2xl shadow-lg border border-blue-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-3"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 text-center"
+            >
+              <h2
+                class="text-2xl font-bold text-white flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Uwagi
+              </h2>
+            </div>
+            <ul class="p-6 flex-grow flex flex-col justify-center space-y-4 text-gray-800 text-base list-disc marker:text-primary pl-10 pr-2">
+              <li>
+                <p>
+                  <strong>Plan ma charakter orientacyjny</strong>. Niektóre
+                  przedmioty można realizować w innych semestrach. W planie nie
+                  zawierają się przedmioty do wyboru, potrzebne do uzupełniania
+                  ECTS dla poszczególnych specjalizacji. Ostatcznie możecie
+                  zapisać się na wiele przedmiotów, które nie są tutaj
+                  wyszczególnione.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>WF</strong> można realizować w dowolnym wybranym przez
+                  siebie momencie na studiach (poza semestrem pierwszym).
+                  Łącznie należy zaliczyć 2 semestry. W powyższym planie
+                  umieszczono je orientacyjnie.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Lektorat języka obcego</strong> (zazwyczaj
+                  angielskiego) realizujesz po rozwiązaniu testu poziomującego.
+                  Liczba obowiązkowych semestrów wynosi od 0 do 3 w zależności
+                  od tego, jak dobrze napiszesz test!
+                </p>
+              </li>
+              <li>
+                <p>
+                  Jako że od 2026 obowiązuje
+                  <strong>nowy program studiów</strong>, plan może zawierać
+                  drobne nieścisłości. Jednak ogólny zarys powinien być
+                  prawidłowy.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- SPECJALNOŚĆ: MATEMATYKA NAUCZYCIELSKA      -->
+        <!-- ========================================== -->
+        <div
+          id="plan-matematyka-nauczycielska"
+          class="specialization-plan hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- SEMESTR 1 - MATEMATYKA NAUCZYCIELSKA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 1</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztat informatyczny matematyka</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Szkolenie wstępne w zakresie BHP</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do kombinatoryki</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 2 - MATEMATYKA NAUCZYCIELSKA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 2</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 1 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Psychologia dla nauczycieli</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Psychologia rozwoju człowieka</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">LaTeX</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Pedagogika dla nauczycieli</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 3 - MATEMATYKA NAUCZYCIELSKA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 3</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 3
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wspomaganie rozwoju dziecka i dysharmonie</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Pedagogika - uczeń ze spec. potrzebami</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Elementy prawa oświatowego</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do arytmetyki</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do geometrii</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Lektorat języka obcego 1</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 4 - MATEMATYKA NAUCZYCIELSKA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 4</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Równania różniczkowe 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Podstawy statystyki praktycznej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Emisja głosu</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Podstawy dydaktyki</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Psychologiczne i pedagogiczne podstawy pracy</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Lektorat języka obcego 2</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 5 - MATEMATYKA NAUCZYCIELSKA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 5</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Praktyka psychologiczno-pedagogiczna w szkole</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Metodyka nauczania matematyki I</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Kultura języka</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Lektorat języka obcego 3</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Przedmioty do wyboru</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 6 - MATEMATYKA NAUCZYCIELSKA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 6</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt zespołowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Ochrona własności intelektualnej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Egzamin dyplomowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Kompetencje psychologiczno-pedagogiczne</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Praktyka - nauczanie matematyki I</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztaty zadaniowe dla nauczycieli</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztaty - popularyzacja matematyki I</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Przedmioty do wyboru</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-blue-50 rounded-2xl shadow-lg border border-blue-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-3"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 text-center"
+            >
+              <h2
+                class="text-2xl font-bold text-white flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Uwagi
+              </h2>
+            </div>
+            <ul class="p-6 flex-grow flex flex-col justify-center space-y-4 text-gray-800 text-base list-disc marker:text-primary pl-10 pr-2">
+              <li>
+                <p>
+                  <strong>Plan ma charakter orientacyjny</strong>. Niektóre
+                  przedmioty można realizować w innych semestrach. W planie nie
+                  zawierają się przedmioty do wyboru, potrzebne do uzupełniania
+                  ECTS dla poszczególnych specjalizacji. Ostatcznie możecie
+                  zapisać się na wiele przedmiotów, które nie są tutaj
+                  wyszczególnione.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>WF</strong> można realizować w dowolnym wybranym przez
+                  siebie momencie na studiach (poza semestrem pierwszym).
+                  Łącznie należy zaliczyć 2 semestry. W powyższym planie
+                  umieszczono je orientacyjnie.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Lektorat języka obcego</strong> (zazwyczaj
+                  angielskiego) realizujesz po rozwiązaniu testu poziomującego.
+                  Liczba obowiązkowych semestrów wynosi od 0 do 3 w zależności
+                  od tego, jak dobrze napiszesz test!
+                </p>
+              </li>
+              <li>
+                <p>
+                  Jako że od 2026 obowiązuje
+                  <strong>nowy program studiów</strong>, plan może zawierać
+                  drobne nieścisłości. Jednak ogólny zarys powinien być
+                  prawidłowy.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- SPECJALNOŚĆ: MATEMATYKA STOSOWANA          -->
+        <!-- ========================================== -->
+        <div
+          id="plan-matematyka-stosowana"
+          class="specialization-plan hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- SEMESTR 1 - MATEMATYKA STOSOWANA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 1</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztat informatyczny matematyka</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Szkolenie wstępne w zakresie BHP</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do kombinatoryki</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 2 - MATEMATYKA STOSOWANA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 2</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 1 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Topologia
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 3 - MATEMATYKA STOSOWANA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 3</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 3
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 2 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 1</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Miara i całka
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 4 - MATEMATYKA STOSOWANA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 4</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Równania różniczkowe 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Podstawy statystyki praktycznej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 2</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmiot do wyboru z dziedz.
+                  humanistycznych/społecznych</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 5 - MATEMATYKA STOSOWANA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 5</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Modelowanie deterministyczne</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Bazy danych</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Analiza numeryczna</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Mechanika klasyczna</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 3</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 6 - MATEMATYKA STOSOWANA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 6</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt zespołowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Ochrona własności intelektualnej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Egzamin dyplomowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Modelowanie stochastyczne</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Uczenie maszynowe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-blue-50 rounded-2xl shadow-lg border border-blue-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-3"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 text-center"
+            >
+              <h2
+                class="text-2xl font-bold text-white flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Uwagi
+              </h2>
+            </div>
+            <ul class="p-6 flex-grow flex flex-col justify-center space-y-4 text-gray-800 text-base list-disc marker:text-primary pl-10 pr-2">
+              <li>
+                <p>
+                  <strong>Plan ma charakter orientacyjny</strong>. Niektóre
+                  przedmioty można realizować w innych semestrach. W planie nie
+                  zawierają się przedmioty do wyboru, potrzebne do uzupełniania
+                  ECTS dla poszczególnych specjalizacji. Ostatcznie możecie
+                  zapisać się na wiele przedmiotów, które nie są tutaj
+                  wyszczególnione.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>WF</strong> można realizować w dowolnym wybranym przez
+                  siebie momencie na studiach (poza semestrem pierwszym).
+                  Łącznie należy zaliczyć 2 semestry. W powyższym planie
+                  umieszczono je orientacyjnie.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Lektorat języka obcego</strong> (zazwyczaj
+                  angielskiego) realizujesz po rozwiązaniu testu poziomującego.
+                  Liczba obowiązkowych semestrów wynosi od 0 do 3 w zależności
+                  od tego, jak dobrze napiszesz test!
+                </p>
+              </li>
+              <li>
+                <p>
+                  Jako że od 2026 obowiązuje
+                  <strong>nowy program studiów</strong>, plan może zawierać
+                  drobne nieścisłości. Jednak ogólny zarys powinien być
+                  prawidłowy.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- SPECJALNOŚĆ: MATEMATYKA TEORETYCZNA        -->
+        <!-- ========================================== -->
+        <div
+          id="plan-matematyka-teoretyczna"
+          class="specialization-plan hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- SEMESTR 1 - MATEMATYKA TEORETYCZNA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 1</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztat informatyczny matematyka</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Szkolenie wstępne w zakresie BHP</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 2 - MATEMATYKA TEORETYCZNA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 2</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 1 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Topologia
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 3 - MATEMATYKA TEORETYCZNA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 3</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 3
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Miara i całka
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Proseminarium 1</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 1</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 4 - MATEMATYKA TEORETYCZNA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 4</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Równania różniczkowe 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Funkcje analityczne
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >rozszerzenie</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 2</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 5 - MATEMATYKA TEORETYCZNA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 5</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt zespołowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Analiza funkcjonalna 1</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Lektorat języka angielskiego 3</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty podst. dla spec. mat. teoret.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmiot do wyboru z dziedz.
+                  humanistycznych/społecznych</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 6 - MATEMATYKA TEORETYCZNA -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 6</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Egzamin dyplomowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Ochrona własności intelektualnej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt indywidualny</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Rozmaitości różniczkowalne</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty podst. dla spec. mat. teoret.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-blue-50 rounded-2xl shadow-lg border border-blue-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-3"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 text-center"
+            >
+              <h2
+                class="text-2xl font-bold text-white flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Uwagi
+              </h2>
+            </div>
+            <ul class="p-6 flex-grow flex flex-col justify-center space-y-4 text-gray-800 text-base list-disc marker:text-primary pl-10 pr-2">
+              <li>
+                <p>
+                  <strong>Plan ma charakter orientacyjny</strong>. Niektóre
+                  przedmioty można realizować w innych semestrach. W planie nie
+                  zawierają się przedmioty do wyboru, potrzebne do uzupełniania
+                  ECTS dla poszczególnych specjalizacji. Ostatcznie możecie
+                  zapisać się na wiele przedmiotów, które nie są tutaj
+                  wyszczególnione.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>WF</strong> można realizować w dowolnym wybranym przez
+                  siebie momencie na studiach (poza semestrem pierwszym).
+                  Łącznie należy zaliczyć 2 semestry. W powyższym planie
+                  umieszczono je orientacyjnie.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Lektorat języka obcego</strong> (zazwyczaj
+                  angielskiego) realizujesz po rozwiązaniu testu poziomującego.
+                  Liczba obowiązkowych semestrów wynosi od 0 do 3 w zależności
+                  od tego, jak dobrze napiszesz test!
+                </p>
+              </li>
+              <li>
+                <p>
+                  Jako że od 2026 obowiązuje
+                  <strong>nowy program studiów</strong>, plan może zawierać
+                  drobne nieścisłości. Jednak ogólny zarys powinien być
+                  prawidłowy.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- SPECJALNOŚĆ: OGÓLNA (BEZ SPECJALNOŚCI)     -->
+        <!-- ========================================== -->
+        <div
+          id="plan-ogólna-bez-specjalności"
+          class="specialization-plan hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- SEMESTR 1 - OGÓLNA (BEZ SPECJALNOŚCI) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 1</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Warsztat informatyczny matematyka</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Szkolenie wstępne w zakresie BHP</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Wstęp do matematyki
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Wstęp do kombinatoryki</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 2 - OGÓLNA (BEZ SPECJALNOŚCI) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 2</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Programowanie 1 (Python)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra liniowa 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 2
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmiot do wyboru z dziedz.
+                  humanistycznych/społecznych</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 3 - OGÓLNA (BEZ SPECJALNOŚCI) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 3</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Algebra 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Analiza matematyczna 3
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Lektorat języka obcego 1</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 4 - OGÓLNA (BEZ SPECJALNOŚCI) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 4</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Rachunek prawdopodobieństwa 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Równania różniczkowe 1
+                  <span
+                    class="inline-block mt-1 text-xs font-semibold px-2 py-1 bg-blue-100 text-primary rounded-full"
+                    >podst. / rozsz.</span
+                  ></span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Podstawy statystyki praktycznej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Lektorat języka obcego 2</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 5 - OGÓLNA (BEZ SPECJALNOŚCI) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 5</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Bazy danych</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Lektorat języka obcego 3</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- SEMESTR 6 - OGÓLNA (BEZ SPECJALNOŚCI) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1"
+          >
+            <div
+              class="bg-gradient-to-r from-primary to-blue-400 p-4 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">Semestr 6</h2>
+            </div>
+            <ul class="p-6 space-y-4">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Egzamin dyplomowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Ochrona własności intelektualnej</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700">Projekt zespołowy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span class="text-gray-700"
+                  >Przedmioty matematyczne do wyboru</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-blue-50 rounded-2xl shadow-lg border border-blue-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 transform transition-all hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-3"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 text-center"
+            >
+              <h2
+                class="text-2xl font-bold text-white flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                Uwagi
+              </h2>
+            </div>
+            <ul class="p-6 flex-grow flex flex-col justify-center space-y-4 text-gray-800 text-base">
+              <li class="flex items-start">
+                <span class="text-primary mr-2 mt-0.5">•</span>
+                <p>
+                  <strong>Plan ma charakter orientacyjny</strong>. Niektóre
+                  przedmioty można realizować w innych semestrach. W planie nie
+                  zawierają się przedmioty do wyboru, potrzebne do uzupełniania
+                  ECTS dla poszczególnych specjalizacji. Ostatcznie możecie
+                  zapisać się na wiele przedmiotów, które nie są tutaj
+                  wyszczególnione.
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2 mt-0.5">•</span>
+                <p>
+                  <strong>WF</strong> można realizować w dowolnym wybranym przez
+                  siebie momencie na studiach (poza semestrem pierwszym).
+                  Łącznie należy zaliczyć 2 semestry. W powyższym planie
+                  umieszczono je orientacyjnie.
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2 mt-0.5">•</span>
+                <p>
+                  <strong>Lektorat języka obcego</strong> (zazwyczaj
+                  angielskiego) realizujesz po rozwiązaniu testu poziomującego.
+                  Liczba obowiązkowych semestrów wynosi od 0 do 3 w zależności
+                  od tego, jak dobrze napiszesz test!
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-3 mt-1 text-xl leading-none">•</span>
+                <p>
+                  Jako że od 2026 obowiązuje
+                  <strong>nowy program studiów</strong>, plan może zawierać
+                  drobne nieścisłości. Jednak ogólny zarys powinien być
+                  prawidłowy.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function showPlan(planId) {
+        document
+          .querySelectorAll(".specialization-plan")
+          .forEach((el) => el.classList.add("hidden"));
+        const activePlan = document.getElementById(planId);
+        if (activePlan) {
+          activePlan.classList.remove("hidden");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const select = document.getElementById("specialization-select");
+        showPlan(select.value);
+
+        select.addEventListener("change", (e) => {
+          showPlan(e.target.value);
+        });
+      });
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
