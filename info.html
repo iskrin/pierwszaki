@@ -113,7 +113,7 @@
     </nav>
 
     <!-- Content -->
-    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
       <div class="text-center mb-12">
         <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
           Dodatkowe Informacje
@@ -123,256 +123,423 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <!-- Specjalności -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-fit">
-          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
-            <svg
-              class="w-6 h-6 mr-3"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-              ></path>
-            </svg>
-            Lista specjalności
-          </h2>
-          <div class="space-y-3">
-             <div class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4">1</div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Lewa kolumna: Plany zajęć i Specjalności -->
+        <div class="lg:col-span-7 flex flex-col gap-8">
+          <!-- Plany zajęć -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 order-2"
+          >
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+              <svg
+                class="w-6 h-6 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Prawdopodobne plany zajęć
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Pamiętajcie, że do startu zajęć jeszcze długa droga i plan może
+              ulec zmianie (btw warsztat informatyczny odbywa się zdalnie)
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div>
+                <h3
+                  class="text-xl font-semibold text-gray-800 mb-4 text-center"
+                >
+                  Kurs podstawowy
+                </h3>
+                <div
+                  class="overflow-hidden rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div
+                    onclick="openModal('media/plan_p.jpg')"
+                    class="block group cursor-zoom-in"
+                  >
+                    <img
+                      src="media/plan_p.jpg"
+                      alt="Plan kursu podstawowego"
+                      class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-semibold text-gray-800 mb-4 text-center"
+                >
+                  Kurs rozszerzony
+                </h3>
+                <div
+                  class="overflow-hidden rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div
+                    onclick="openModal('media/plan_r.jpg')"
+                    class="block group cursor-zoom-in"
+                  >
+                    <img
+                      src="media/plan_r.jpg"
+                      alt="Plan kursu rozszerzonego"
+                      class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specjalności -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-fit order-1"
+          >
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+              <svg
+                class="w-6 h-6 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                ></path>
+              </svg>
+              Lista specjalności
+            </h2>
+            <div class="space-y-3">
+              <div
+                class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm"
+              >
+                <div
+                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4"
+                >
+                  1
+                </div>
                 <span class="font-semibold text-gray-700">Analiza danych</span>
-             </div>
-             <div class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4">2</div>
-                <span class="font-semibold text-gray-700">Matematyka stosowana</span>
-             </div>
-             <div class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4">3</div>
-                <span class="font-semibold text-gray-700">Matematyka aktuarialno-finansowa</span>
-             </div>
-             <div class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4">4</div>
-                <span class="font-semibold text-gray-700">Matematyka teoretyczna</span>
-             </div>
-             <div class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4">5</div>
-                <span class="font-semibold text-gray-700">Matematyka nauczycielska</span>
-             </div>
+              </div>
+              <div
+                class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm"
+              >
+                <div
+                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4"
+                >
+                  2
+                </div>
+                <span class="font-semibold text-gray-700"
+                  >Matematyka stosowana</span
+                >
+              </div>
+              <div
+                class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm"
+              >
+                <div
+                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4"
+                >
+                  3
+                </div>
+                <span class="font-semibold text-gray-700"
+                  >Matematyka aktuarialno-finansowa</span
+                >
+              </div>
+              <div
+                class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm"
+              >
+                <div
+                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4"
+                >
+                  4
+                </div>
+                <span class="font-semibold text-gray-700"
+                  >Matematyka teoretyczna</span
+                >
+              </div>
+              <div
+                class="flex items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm"
+              >
+                <div
+                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-700 rounded-lg font-bold text-sm mr-4"
+                >
+                  5
+                </div>
+                <span class="font-semibold text-gray-700"
+                  >Matematyka nauczycielska</span
+                >
+              </div>
+            </div>
           </div>
         </div>
+        <!-- Koniec lewej kolumny -->
 
-        <!-- Przydatne linki -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
-            <svg
-              class="w-6 h-6 mr-3"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-              ></path>
-            </svg>
-            Przydatne linki
-          </h2>
-          <div class="space-y-4">
-            <a
-              href="https://www.math.uni.wroc.pl/~jwr/"
-              target="_blank"
-              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
-            >
-              <div class="flex items-center justify-between">
-                <h3
-                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
-                >
-                  Strona dr. Jarosława Wróblewskiego
-                </h3>
-                <svg
-                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-gray-600 text-sm mt-2">
-                W zakładkach Analiza matematyczna 1 (AM-1) na samym dole
-                znajdują się testy kwalifikacyjne z zeszłych lat. Przy okazji
-                możecie pooglądać stare kolosy.
-              </p>
-            </a>
+        <!-- Prawa kolumna: Przydatne linki -->
+        <div class="lg:col-span-5 flex flex-col gap-8">
+          <!-- Przydatne linki -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+          >
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+              <svg
+                class="w-6 h-6 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                ></path>
+              </svg>
+              Przydatne linki
+            </h2>
+            <div class="space-y-4">
+              <a
+                href="https://www.math.uni.wroc.pl/~jwr/"
+                target="_blank"
+                class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <h3
+                    class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                  >
+                    Strona dr. Jarosława Wróblewskiego
+                  </h3>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-primary transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-gray-600 text-sm mt-2">
+                  W zakładkach Analiza matematyczna 1 (AM-1) na samym dole
+                  znajdują się testy kwalifikacyjne z zeszłych lat. Przy okazji
+                  możecie pooglądać stare kolosy.
+                </p>
+              </a>
 
-            <a
-              href="https://www.dawidmiga.cz/informacje-dla-pierwszakow"
-              target="_blank"
-              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
-            >
-              <div class="flex items-center justify-between">
-                <h3
-                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
-                >
-                  Poradnik Dawida
-                </h3>
-                <svg
-                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-gray-600 text-sm mt-2">
-                Poradnik dla pierwszaków od naszego absolwenta.
-              </p>
-            </a>
+              <a
+                href="https://www.dawidmiga.cz/informacje-dla-pierwszakow"
+                target="_blank"
+                class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <h3
+                    class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                  >
+                    Poradnik Dawida
+                  </h3>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-primary transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-gray-600 text-sm mt-2">
+                  Poradnik dla pierwszaków od naszego absolwenta.
+                </p>
+              </a>
 
-            <a
-              href="https://www.math.uni.wroc.pl/sites/default/files/poradnik_23_24z.pdf"
-              target="_blank"
-              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
-            >
-              <div class="flex items-center justify-between">
-                <h3
-                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
-                >
-                  Poradnik dr. Jana Kraszewskiego
-                </h3>
-                <svg
-                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-gray-600 text-sm mt-2">
-                Poradnik dla pierwszaków od dr. Jana Kraszewskiego.
-              </p>
-            </a>
+              <a
+                href="https://www.math.uni.wroc.pl/sites/default/files/poradnik_23_24z.pdf"
+                target="_blank"
+                class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <h3
+                    class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                  >
+                    Poradnik dr. Jana Kraszewskiego
+                  </h3>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-primary transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-gray-600 text-sm mt-2">
+                  Poradnik dla pierwszaków od dr. Jana Kraszewskiego.
+                </p>
+              </a>
 
-            <a
-              href="https://www.facebook.com/WRSSWMI"
-              target="_blank"
-              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
-            >
-              <div class="flex items-center justify-between">
-                <h3
-                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
-                >
-                  Strona Samorządu (WRSS WMI)
-                </h3>
-                <svg
-                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-gray-600 text-sm mt-2">
-                Obowiązkowy like. (Przeprowadzamy kontrole, brak like skutkuje
-                uwagą do dzienniczka i wezwaniem rodziców)
-              </p>
-            </a>
+              <a
+                href="https://www.facebook.com/WRSSWMI"
+                target="_blank"
+                class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <h3
+                    class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                  >
+                    FB Samorządu (WRSS WMI)
+                  </h3>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-primary transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-gray-600 text-sm mt-2">
+                  Obowiązkowy like. (Przeprowadzamy kontrole, brak like skutkuje
+                  uwagą do dzienniczka i wezwaniem rodziców)
+                </p>
+              </a>
 
-            <a
-              href="https://www.instagram.com/wrss_wmi/"
-              target="_blank"
-              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
-            >
-              <div class="flex items-center justify-between">
-                <h3
-                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
-                >
-                  Instagram Samorządu
-                </h3>
-                <svg
-                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-gray-600 text-sm mt-2">
-                Obowiązkowy follow. W razie kontroli jak wyżej.
-              </p>
-            </a>
+              <a
+                href="https://www.instagram.com/wrss_wmi/"
+                target="_blank"
+                class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <h3
+                    class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                  >
+                    Instagram Samorządu
+                  </h3>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-primary transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-gray-600 text-sm mt-2">
+                  Obowiązkowy follow. W razie kontroli jak wyżej.
+                </p>
+              </a>
 
-            <a
-              href="https://www.facebook.com/IMUWr"
-              target="_blank"
-              class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
-            >
-              <div class="flex items-center justify-between">
-                <h3
-                  class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
-                >
-                  Instytut Matematyczny UWr na FB
-                </h3>
-                <svg
-                  class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-gray-600 text-sm mt-2">
-                Strona na Fb naszego instytutu.
-              </p>
-            </a>
+              <a
+                href="https://www.facebook.com/IMUWr"
+                target="_blank"
+                class="block p-4 border border-gray-100 rounded-xl bg-gray-50 hover:bg-blue-50 hover:border-blue-200 hover:shadow-md transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <h3
+                    class="text-lg font-bold text-primary group-hover:text-primaryHover transition-colors"
+                  >
+                    Instytut Matematyczny UWr na FB
+                  </h3>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-primary transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-gray-600 text-sm mt-2">
+                  Strona na FB naszego instytutu.
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kontakt -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+          >
+            <h2 class="text-2xl font-bold text-primary mb-6 flex items-center">
+              <svg
+                class="w-6 h-6 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+              Masz więcej pytań?
+            </h2>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Śmiało możesz się do nas odezwać na instagramie WRSS lub na grupce
+              twojego roku na messengerze.
+            </p>
           </div>
         </div>
+        <!-- Koniec prawej kolumny -->
       </div>
+      <!-- Koniec głównego grida -->
     </main>
 
     <!-- Footer -->
+
+    <!-- Modal na zdjęcia -->
+    <div
+      id="image-modal"
+      class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex items-center justify-center p-4 transition-opacity"
+      onclick="closeModal()"
+    >
+      <span
+        class="absolute top-4 right-6 text-white text-5xl cursor-pointer hover:text-gray-300 font-light"
+        >&times;</span
+      >
+      <img
+        id="modal-image"
+        class="max-w-full max-h-full rounded-lg shadow-2xl object-contain cursor-default"
+        src=""
+        alt="Powiększony plan"
+        onclick="event.stopPropagation()"
+      />
+    </div>
 
     <!-- Skrypty -->
     <script src="data.js"></script>

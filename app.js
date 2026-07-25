@@ -121,3 +121,31 @@ window.toggleFaq = function (index) {
     iconDiv.classList.remove("rotate-180");
   }
 };
+
+// Obsługa modala ze zdjęciami
+window.openModal = function (src) {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-image");
+  if (modal && modalImg) {
+    modalImg.src = src;
+    modal.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+};
+
+window.closeModal = function () {
+  const modal = document.getElementById("image-modal");
+  if (modal) {
+    modal.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
+};
+
+// Zamykanie modala klawiszem ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    if (typeof closeModal === 'function') {
+      closeModal();
+    }
+  }
+});
