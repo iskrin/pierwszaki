@@ -69,6 +69,43 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  // Odliczanie do 1 października
+  const countdownElement = document.getElementById("countdown");
+  if (countdownElement) {
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+
+    function updateCountdown() {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      let targetDate = new Date(currentYear, 9, 1); // 9 to październik (miesiące od 0)
+
+      // Jeśli 1 października w tym roku minął, ustaw cel na kolejny rok
+      if (now > targetDate) {
+        targetDate = new Date(currentYear + 1, 9, 1);
+      }
+
+      const diff = targetDate - now;
+
+      if (diff > 0) {
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / 1000 / 60) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+
+        if(daysElement) daysElement.textContent = d;
+        if(hoursElement) hoursElement.textContent = h;
+        if(minutesElement) minutesElement.textContent = m;
+        if(secondsElement) secondsElement.textContent = s;
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
 });
 
 // Funkcja globalna dla przełączania akordeonu FAQ
