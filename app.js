@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Odliczanie do jutra, godziny 8:00
+  // Odliczanie do jutra, godziny 8:15
   const countdownElement = document.getElementById("countdown");
   if (countdownElement) {
     const daysElement = document.getElementById("days");
@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const secondsElement = document.getElementById("seconds");
     const messageElement = document.getElementById("countdown-message");
 
-    // Cel: jutro o godzinie 8:00
+    // Cel: jutro o godzinie 8:15
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 1);
-    targetDate.setHours(8, 0, 0, 0);
+    targetDate.setHours(8, 15, 0, 0);
 
     let intervalId = null;
 
