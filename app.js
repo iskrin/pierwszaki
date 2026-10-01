@@ -70,24 +70,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Odliczanie do 1 października
+  // Odliczanie do jutra, godziny 8:00
   const countdownElement = document.getElementById("countdown");
   if (countdownElement) {
     const daysElement = document.getElementById("days");
     const hoursElement = document.getElementById("hours");
     const minutesElement = document.getElementById("minutes");
     const secondsElement = document.getElementById("seconds");
+    const messageElement = document.getElementById("countdown-message");
+
+    // Cel: jutro o godzinie 8:00
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 1);
+    targetDate.setHours(8, 0, 0, 0);
+
+    let intervalId = null;
+
+    function setZero() {
+      if (daysElement) daysElement.textContent = "0";
+      if (hoursElement) hoursElement.textContent = "0";
+      if (minutesElement) minutesElement.textContent = "0";
+      if (secondsElement) secondsElement.textContent = "0";
+    }
 
     function updateCountdown() {
       const now = new Date();
-      const currentYear = now.getFullYear();
-      let targetDate = new Date(currentYear, 9, 1); // 9 to październik (miesiące od 0)
-
-      // Jeśli 1 października w tym roku minął, ustaw cel na kolejny rok
-      if (now > targetDate) {
-        targetDate = new Date(currentYear + 1, 9, 1);
-      }
-
       const diff = targetDate - now;
 
       if (diff > 0) {
@@ -96,15 +103,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const m = Math.floor((diff / 1000 / 60) % 60);
         const s = Math.floor((diff / 1000) % 60);
 
-        if(daysElement) daysElement.textContent = d;
-        if(hoursElement) hoursElement.textContent = h;
-        if(minutesElement) minutesElement.textContent = m;
-        if(secondsElement) secondsElement.textContent = s;
+        if (daysElement) daysElement.textContent = d;
+        if (hoursElement) hoursElement.textContent = h;
+        if (minutesElement) minutesElement.textContent = m;
+        if (secondsElement) secondsElement.textContent = s;
+      } else {
+        // Czas minął - zatrzymaj odliczanie i pokaż komunikat
+        if (intervalId !== null) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+        setZero();
+        if (messageElement) {
+          messageElement.classList.remove("hidden");
+        }
       }
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    if (!messageElement || messageElement.classList.contains("hidden")) {
+      intervalId = setInterval(updateCountdown, 1000);
+    }
   }
 });
 
